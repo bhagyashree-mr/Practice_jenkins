@@ -1,11 +1,12 @@
-# List Files in the Current Directory
-Get-ChildItem
+rem List Files in the Current Directory 
+dir
 
-# Create a Directory
-New-Item -ItemType Directory -Name abc
+rem Create a Directory 
+mkdir abc
 
-# List Files with Details, Sorted by Modification Time
-Get-ChildItem | Sort-Object LastWriteTime
+rem List Files with Details, Sorted by Modification Time 
+dir | Sort-Object LastWriteTime
 
-# Sort (if you have a list of items, replace this with your actual list)
-Sort-Object
+rem Sort (if you have a list of items, replace this with your actual list)
+sort
+
