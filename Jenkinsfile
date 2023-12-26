@@ -5,7 +5,7 @@ pipeline {
         stage("Checkout") {
             steps {
                 // Ensure the workspace contains the latest version of the repository
-                git "https://github.com/bhagyashree-mr/Practice_jenkins.git"
+                git branch: 'main', url: 'https://github.com/bhagyashree-mr/Practice_jenkins.git'
             }
         }
 
