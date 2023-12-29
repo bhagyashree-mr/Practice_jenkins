@@ -4,19 +4,28 @@ pipeline {
     stages {
         stage("Checkout") {
             steps {
-                // Ensure the workspace contains the latest version of the repository
                 git branch: 'main', url: 'https://github.com/bhagyashree-mr/Practice_jenkins.git'
             }
         }
-
-        stage("Powershell Commands") {
+        stage('Run Script') {
             steps {
-                // Navigate to the directory containing the script (if needed)
-                // dir('path/to/script')
-
-                // Execute the batch file
-                bat './myScript.bat'
+                script {
+                   sh ' chmod +x myScript.sh '
+                   sh ' ./myScript.sh'
+                }
             }
         }
     }
+
+    post {
+        success {
+            echo 'Build succeeded!'
+        }
+        failure {
+            echo 'Build failed!'
+        }
+    }
 }
+
+
+       
